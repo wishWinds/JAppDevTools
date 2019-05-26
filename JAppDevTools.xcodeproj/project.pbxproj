@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FED7614F229A4A980096F3B3 /* JAppDevTools.m in Sources */ = {isa = PBXBuildFile; fileRef = FED7614E229A4A980096F3B3 /* JAppDevTools.m */; };
-		FED76150229A4A980096F3B3 /* JAppDevTools.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FED7614D229A4A980096F3B3 /* JAppDevTools.h */; };
+		176D6FB98FE475376416D852 /* libPods-JAppDevTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4F0CB94416D76C26A25493 /* libPods-JAppDevTools.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,16 +17,16 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				FED76150229A4A980096F3B3 /* JAppDevTools.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		84A182384B68527264D46B6B /* Pods-JAppDevTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JAppDevTools.release.xcconfig"; path = "Target Support Files/Pods-JAppDevTools/Pods-JAppDevTools.release.xcconfig"; sourceTree = "<group>"; };
+		8B4F0CB94416D76C26A25493 /* libPods-JAppDevTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JAppDevTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D64DDB82D78F5869FEC47BAD /* Pods-JAppDevTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JAppDevTools.debug.xcconfig"; path = "Target Support Files/Pods-JAppDevTools/Pods-JAppDevTools.debug.xcconfig"; sourceTree = "<group>"; };
 		FED7614A229A4A980096F3B3 /* libJAppDevTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJAppDevTools.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		FED7614D229A4A980096F3B3 /* JAppDevTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JAppDevTools.h; sourceTree = "<group>"; };
-		FED7614E229A4A980096F3B3 /* JAppDevTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JAppDevTools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +34,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				176D6FB98FE475376416D852 /* libPods-JAppDevTools.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C7681153516E7E960B864281 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D64DDB82D78F5869FEC47BAD /* Pods-JAppDevTools.debug.xcconfig */,
+				84A182384B68527264D46B6B /* Pods-JAppDevTools.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D91BBC8C507FD0D175586570 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B4F0CB94416D76C26A25493 /* libPods-JAppDevTools.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FED76141229A4A980096F3B3 = {
 			isa = PBXGroup;
 			children = (
 				FED7614C229A4A980096F3B3 /* JAppDevTools */,
 				FED7614B229A4A980096F3B3 /* Products */,
+				C7681153516E7E960B864281 /* Pods */,
+				D91BBC8C507FD0D175586570 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +80,6 @@
 		FED7614C229A4A980096F3B3 /* JAppDevTools */ = {
 			isa = PBXGroup;
 			children = (
-				FED7614D229A4A980096F3B3 /* JAppDevTools.h */,
-				FED7614E229A4A980096F3B3 /* JAppDevTools.m */,
 			);
 			path = JAppDevTools;
 			sourceTree = "<group>";
@@ -73,6 +91,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FED76153229A4A980096F3B3 /* Build configuration list for PBXNativeTarget "JAppDevTools" */;
 			buildPhases = (
+				6E95DEB9DE100B64BC9F7781 /* [CP] Check Pods Manifest.lock */,
 				FED76146229A4A980096F3B3 /* Sources */,
 				FED76147229A4A980096F3B3 /* Frameworks */,
 				FED76148229A4A980096F3B3 /* CopyFiles */,
@@ -117,12 +136,36 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6E95DEB9DE100B64BC9F7781 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JAppDevTools-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FED76146229A4A980096F3B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FED7614F229A4A980096F3B3 /* JAppDevTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +286,7 @@
 		};
 		FED76154229A4A980096F3B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D64DDB82D78F5869FEC47BAD /* Pods-JAppDevTools.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TAXNVNJP42;
@@ -255,6 +299,7 @@
 		};
 		FED76155229A4A980096F3B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84A182384B68527264D46B6B /* Pods-JAppDevTools.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TAXNVNJP42;
