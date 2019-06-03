@@ -28,14 +28,14 @@ QMUILogItem *logItem = [QMUILogItem logItemWithLevel:QMUILogLevelInfo name:_name
 
 #define LogWarning(_name_, ...) \
 { \
-QMUILogItem *logItem = [QMUILogItem logItemWithLevel:QMUILogLevelWarning name:_name_ logString:__VA_ARGS__]; \
+QMUILogItem *logItem = [QMUILogItem logItemWithLevel:QMUILogLevelWarn name:_name_ logString:__VA_ARGS__]; \
 [[QMUILogger sharedInstance] printLogWithFile:__FILE__ line:__LINE__ func:__FUNCTION__ logItem:logItem]; \
 [QMUIConsole logWithLevel:@"Warning" name:_name_ logString:[logItem logString]]; \
 }
 
 #define LogError(_name_, ...) \
 { \
-QMUILogItem *logItem = [QMUILogItem logItemWithLevel:QMUILogLevelError name:_name_ logString:__VA_ARGS__]; \
+QMUILogItem *logItem = [QMUILogItem logItemWithLevel:QMUILogLevelWarn name:_name_ logString:__VA_ARGS__]; \
 [[QMUILogger sharedInstance] printLogWithFile:__FILE__ line:__LINE__ func:__FUNCTION__ logItem:logItem]; \
 [QMUIConsole logWithLevel:@"Error" name:_name_ logString:[logItem logString]]; \
 }
