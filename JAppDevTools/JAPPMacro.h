@@ -14,30 +14,38 @@
 #ifdef DEBUG
 #define LogDefault(_name_, ...) \
 { \
+dispatch_async(dispatch_get_main_queue(), ^{ \
 QMUILogItem *logItem = [QMUILogItem logItemWithLevel:QMUILogLevelDefault name:_name_ logString:__VA_ARGS__]; \
 [[QMUILogger sharedInstance] printLogWithFile:__FILE__ line:__LINE__ func:__FUNCTION__ logItem:logItem]; \
 [QMUIConsole logWithLevel:@"Default" name:_name_ logString:[logItem logString]]; \
+}); \
 }
 
 #define LogInfo(_name_, ...) \
 { \
+dispatch_async(dispatch_get_main_queue(), ^{ \
 QMUILogItem *logItem = [QMUILogItem logItemWithLevel:QMUILogLevelInfo name:_name_ logString:__VA_ARGS__]; \
 [[QMUILogger sharedInstance] printLogWithFile:__FILE__ line:__LINE__ func:__FUNCTION__ logItem:logItem]; \
 [QMUIConsole logWithLevel:@"Info" name:_name_ logString:[logItem logString]]; \
+}); \
 }
 
 #define LogWarning(_name_, ...) \
 { \
+dispatch_async(dispatch_get_main_queue(), ^{ \
 QMUILogItem *logItem = [QMUILogItem logItemWithLevel:QMUILogLevelWarn name:_name_ logString:__VA_ARGS__]; \
 [[QMUILogger sharedInstance] printLogWithFile:__FILE__ line:__LINE__ func:__FUNCTION__ logItem:logItem]; \
 [QMUIConsole logWithLevel:@"Warning" name:_name_ logString:[logItem logString]]; \
+}); \
 }
 
 #define LogError(_name_, ...) \
 { \
+dispatch_async(dispatch_get_main_queue(), ^{ \
 QMUILogItem *logItem = [QMUILogItem logItemWithLevel:QMUILogLevelWarn name:_name_ logString:__VA_ARGS__]; \
 [[QMUILogger sharedInstance] printLogWithFile:__FILE__ line:__LINE__ func:__FUNCTION__ logItem:logItem]; \
 [QMUIConsole logWithLevel:@"Error" name:_name_ logString:[logItem logString]]; \
+}); \
 }
 
 #define NSLog(fmt, ...) LogDefault(@"APP", fmt, ##__VA_ARGS__)
@@ -59,5 +67,11 @@ QMUILogItem *logItem = [QMUILogItem logItemWithLevel:QMUILogLevelWarn name:_name
 #define XIBVC(class) [[class alloc] initWithNibName:[class className] bundle:nil]
 #define NIB(class) [UINib nibWithNibName:[class className] bundle:nil]
 
+// 借助routerEvent使用
 #define EventName(class, name) [[class className] stringByAppendingString:name]
+#define EventObjKey @"obj"
+
+
+#define AttrStr(_str_, _font_, _color_) [[NSAttributedString alloc] initWithString:_str_ attributes:@{NSForegroundColorAttributeName: _color_, NSFontAttributeName: _font_}]
+#define URLFromStr(_str_) [NSURL URLWithString:_str_]
 #endif /* JAPPMacro_h */
